@@ -1,6 +1,7 @@
 import "@unocss/reset/tailwind.css";
 import "uno.css";
 import "@/styles/index.less";
+import "vant/lib/index.css";
 
 import { createApp } from "vue";
 import { setupRouterGuard } from "./router/guard";

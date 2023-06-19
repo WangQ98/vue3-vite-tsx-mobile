@@ -1,5 +1,5 @@
 import axios from "axios";
-import { ElMessage } from "element-plus";
+import { showFailToast } from "vant";
 import { cloneDeep } from "lodash-es";
 import qs from "qs";
 import { ContentTypeEnum, RequestEnum, ResultEnum } from "@/enums/";
@@ -176,7 +176,7 @@ export default class Axios {
     }
 
     if (errorMsg) {
-      ElMessage.error(errorMsg);
+      showFailToast(errorMsg);
     }
 
     throw new Error(msg);

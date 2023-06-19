@@ -1,9 +1,5 @@
 export default defineComponent({
   setup() {
-    return () => (
-      <>
-        <div>这是主页</div>
-      </>
-    );
+    return () => <div>111</div>;
   },
 });

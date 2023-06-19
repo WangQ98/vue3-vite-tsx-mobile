@@ -22,7 +22,7 @@
     "qs": "^6.11.1",
     "vant": "^4.5.0",
     "vue": "^3.3.4",
-    "vue-router": "^4.1.6",
+    "vue-router": "^4.2.2",
     "vue-types": "^5.0.2"
   },
   "devDependencies": {

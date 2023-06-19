@@ -19,9 +19,3 @@ declare global {
     VITE_LOAD_ALL_WIDGET: boolean;
   }
 }
-
-declare module "vue" {
-  export type JSXComponent<Props = any> =
-    | { new (): ComponentPublicInstance<Props> }
-    | FunctionalComponent<Props>;
-}

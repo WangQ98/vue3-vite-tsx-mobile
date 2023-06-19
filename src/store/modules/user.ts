@@ -1,4 +1,4 @@
-import { ElMessage } from "element-plus";
+import { showSuccessToast } from "vant";
 import { defineStore } from "pinia";
 import { getUserInfo, userLoginOut } from "@/api/common/user";
 import {
@@ -58,9 +58,7 @@ export const useUserStore = defineStore({
     },
     loginOut() {
       userLoginOut().then((res) => {
-        ElMessage.success({
-          message: res.msg,
-        });
+        showSuccessToast(res.msg);
         removeToken();
         logOut();
       });
