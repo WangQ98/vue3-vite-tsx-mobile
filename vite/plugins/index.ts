@@ -1,9 +1,6 @@
-import Vue from "@vitejs/plugin-vue";
 import VueJsx from "@vitejs/plugin-vue-jsx";
 import Unocss from "unocss/vite";
 import AutoImport from "unplugin-auto-import/vite";
-import { VantResolver } from "unplugin-vue-components/resolvers";
-import Components from "unplugin-vue-components/vite";
 import VueMacros from "unplugin-vue-macros/vite";
 
 import { configMockPlugin } from "./mock";
@@ -15,7 +12,6 @@ export default function createVitePlugins(viteEnv: ViteEnv, isBuild: boolean) {
   const vitePlugins: (PluginOption | PluginOption[])[] = [
     VueMacros({
       plugins: {
-        vue: Vue(),
         vueJsx: VueJsx(),
       },
     }),
@@ -24,14 +20,8 @@ export default function createVitePlugins(viteEnv: ViteEnv, isBuild: boolean) {
     AutoImport({
       imports: ["vue", "vue/macros", "vue-router", "@vueuse/core"],
       dts: "types/auto-imports.d.ts",
-      dirs: ["./src/composables"],
+      dirs: ["./src/hooks"],
       vueTemplate: true,
-    }),
-
-    // https://github.com/antfu/vite-plugin-components
-    Components({
-      dts: "types/components.d.ts",
-      resolvers: [VantResolver()],
     }),
 
     // https://github.com/antfu/unocss
